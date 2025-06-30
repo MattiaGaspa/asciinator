@@ -18,7 +18,12 @@ const filesDir = "./files/"
 
 func setupRouter(threads int) *gin.Engine {
 	r := gin.Default()
-	r.Use(cors.Default())
+	r.Use(cors.New(cors.Config{
+		AllowOrigins:     []string{"https://asciinator.netlify.app/"},
+		AllowMethods:     []string{"POST", "GET", "OPTIONS"},
+		AllowHeaders:     []string{"Origin", "Content-Type"},
+		AllowCredentials: true,
+	}))
 	r.MaxMultipartMemory = 10 << 20 // 10 MiB
 
 	r.GET("/healthcheck", func(c *gin.Context) {
