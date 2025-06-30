@@ -7,7 +7,7 @@ import (
 )
 
 func parser() (string, int, int) {
-	var hostFlag = flag.String("h", "localhost", "Host to run the server on")
+	var hostFlag = flag.String("h", "0.0.0.0", "Host to run the server on")
 	var portFlag = flag.Int("p", 8080, "Port to run the server on")
 	var threadsFlag = flag.Int("t", 16, "Number of threads to use for processing")
 
