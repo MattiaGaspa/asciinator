@@ -5,7 +5,7 @@ async function generateAscii() {
     const output = document.getElementById('output');
 
     if (!fileInput.files[0]) {
-        output.value = "Seleziona un file immagine.";
+        output.value = "Select an image.";
         return;
     }
 
@@ -22,13 +22,13 @@ async function generateAscii() {
         });
 
         if (!response.ok) {
-            output.value = "Errore dal server: " + response.statusText;
+            output.value = "Server error: " + response.statusText;
             return;
         }
 
         const text = await response.text();
         output.value = text;
     } catch (err) {
-        output.value = "Errore di rete: " + err;
+        output.value = "Network error: " + err;
     }
 }
