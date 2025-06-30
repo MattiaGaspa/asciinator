@@ -4,6 +4,7 @@ import (
 	"errors"
 	"fmt"
 	"github.com/MattiaGaspa/asciiImage/asciiConverter"
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"log"
 	"mime/multipart"
@@ -17,6 +18,7 @@ const filesDir = "./files/"
 
 func setupRouter(threads int) *gin.Engine {
 	r := gin.Default()
+	r.Use(cors.Default())
 	r.MaxMultipartMemory = 10 << 20 // 10 MiB
 
 	r.GET("/healthcheck", func(c *gin.Context) {

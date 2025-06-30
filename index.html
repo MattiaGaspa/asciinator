@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./styles.css" type="text/css">
+    <script src="./script.js" defer></script>
+    <title>ASCIINATOR</title>
+</head>
+<body>
+<h1>ASCIINATOR</h1>
+<form id="ascii-form">
+    <label for="image-upload">Upload image:</label>
+    <input type="file" id="image-upload" name="image-upload" accept="image/*"><br><br>
+    <label for="x">Character font width:</label>
+    <input type="number" id="x" name="x" value="10"><br><br>
+    <label for="y">Character font height:</label>
+    <input type="number" id="y" name="y" value="14"><br><br>
+    <button type="button" id="generate-btn" onclick="generateAscii()">Generate</button>
+</form>
+<br>
+<label for="output">Output:</label><br>
+<textarea id="output" name="output" rows="50" cols="200" readonly></textarea>
+</body>
+</html>
