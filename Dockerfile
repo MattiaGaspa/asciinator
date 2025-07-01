@@ -5,4 +5,4 @@ WORKDIR /asciinator
 COPY . .
 ENV GIN_MODE=release
 
-ENTRYPOINT ["go", "run", "."]
+ENTRYPOINT ["go", "run", "./src/"]
