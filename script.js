@@ -5,7 +5,7 @@ async function generateAscii() {
     const output = document.getElementById('output');
 
     if (!fileInput.files[0]) {
-        output.value = "Seleziona un file immagine.";
+        output.value = "Select an image.";
         return;
     }
 
@@ -16,19 +16,19 @@ async function generateAscii() {
     const y = encodeURIComponent(yInput.value);
 
     try {
-        const response = await fetch(`http://127.0.0.1:8080/.netlify/functions/generate?x=${x}&y=${y}`, {
+        const response = await fetch(`http://127.0.0.1:8080/generate?x=${x}&y=${y}`, {
             method: 'POST',
             body: formData
         });
 
         if (!response.ok) {
-            output.value = "Errore dal server: " + response.statusText;
+            output.value = "Server error: " + response.statusText;
             return;
         }
 
         const text = await response.text();
         output.value = text;
     } catch (err) {
-        output.value = "Errore di rete: " + err;
+        output.value = "Network error: " + err;
     }
 }
