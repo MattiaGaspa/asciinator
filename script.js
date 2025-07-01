@@ -16,7 +16,7 @@ async function generateAscii() {
     const y = encodeURIComponent(yInput.value);
 
     try {
-        const response = await fetch(`http://127.0.0.1:8080/generate?x=${x}&y=${y}`, {
+        const response = await fetch(`http://127.0.0.1:8080/.netlify/functions/generate?x=${x}&y=${y}`, {
             method: 'POST',
             body: formData
         });
