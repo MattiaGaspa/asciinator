@@ -61,6 +61,7 @@ func setupRouter(threads int) *gin.Engine {
 }
 
 func validate(file *multipart.FileHeader, x, y string) (int, int, error) {
+	fmt.Println(file.Filename)
 	if !strings.HasSuffix(file.Filename, ".png") &&
 		!strings.HasSuffix(file.Filename, ".jpg") &&
 		!strings.HasSuffix(file.Filename, ".jpeg") {
