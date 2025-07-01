@@ -1,3 +1,3 @@
 build:
 	mkdir -p functions
-	GOOS=linux GOARCH=amd64 go build -o functions/asciinator ./src/main.go
+	GOOS=linux GOARCH=amd64 go build -o functions/asciinator ./src/
